@@ -1,0 +1,18 @@
+<div *ngIf="!apiIntegration.isImagesLoaded" class="main">
+  <div class="spinner-border" role="status">
+  </div>
+</div>
+
+<div *ngIf="apiIntegration.isImagesLoaded"> 
+  <div class="container">
+    <div class="d-flex flex-wrap ">
+      <div *ngFor="let result of apiIntegration.bucketImages">
+        <div style="margin-left:5px">
+          <div class="image_box" >
+            <img src={{result.presignedUrl}} class="images" style="height:250px">
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
